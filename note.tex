@@ -3,6 +3,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{mathpartir}
 \usepackage{diagrams}
+\usepackage{stmaryrd}
 
 \include{type-theory_inc}
 
@@ -14,7 +15,22 @@
 
 \maketitle  
 
+In categorical logic it is customary to model sequents of the form
+$A_1,\ldots,A_n \vdash B$ in a monoidal category as morphism $f :
+\interp{A_1} \otimes \cdots \otimes \interp{A_n} \to \interp{B}$.  For
+example, modeling propositional intuitionistic logic requires the
+monoidal category to be at least cartesian, and $\otimes$ to be the
+cartesian product, while modeling a sequent in propositional linear
+logic requires only tensor.  This works well, but what if the logic
+one is seeking to model categorically does not have a suitable notion
+of a tensor product that can model the left-hand side of sequents?
+Then the notion of a multicategory just might be the structure
+suitable for such a model.
 
+In an ordinary category morphisms have by definition only a single
+source object and a single target object.  Multicategories generalize
+morphisms to have multiple source objects denoted $f : X_1,\ldots,X_n
+\to Y$.
 
 \nocite{*}
 \bibliographystyle{plain}
