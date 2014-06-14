@@ -1,14 +1,14 @@
-PDFLATEX=pdflatex
+.PDFLATEX=pdflatex
 SKIM = skim_revert.sh
 
 all : pdf
 
-pdf : paper.pdf
-	$(SKIM) $(CURDIR)/paper.pdf
+pdf : note.pdf
+	$(SKIM) $(CURDIR)/note.pdf
 
-paper.pdf : paper.tex
-	$(PDFLATEX) paper.tex
-	$(PDFLATEX) paper.tex
+note.pdf : note.tex
+	$(PDFLATEX) note.tex
+	$(PDFLATEX) note.tex
 
 clean : 
 	rm -f *.aux *.dvi *.ps *.log *.pdf *~
