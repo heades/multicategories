@@ -1,4 +1,4 @@
-.PDFLATEX=pdflatex
+PDFLATEX=pdflatex
 SKIM = skim_revert.sh
 
 all : pdf
@@ -6,7 +6,10 @@ all : pdf
 pdf : note.pdf
 	$(SKIM) $(CURDIR)/note.pdf
 
-note.pdf : note.tex
+note.pdf : note.tex references.bib
+	$(PDFLATEX) note.tex
+	bibtex note
+	$(PDFLATEX) note.tex
 	$(PDFLATEX) note.tex
 	$(PDFLATEX) note.tex
 
